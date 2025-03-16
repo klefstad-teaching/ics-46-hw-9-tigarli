@@ -107,8 +107,14 @@ void load_words(set<string> & word_list, const string& file_name) {
 }
 
 void print_word_ladder(const vector<string>& ladder) {
+    if (ladder.size() == 0) {
+        cout << "No word ladder found.\n";
+        return;
+    }
+        
+
     for (int i = 0; i < ladder.size(); ++i) {
-        cout << ladder[i] << " -> ";
+        cout << ladder[i] << " ";
     }
     cout << endl;
 }
@@ -118,7 +124,7 @@ void verify_word_ladder() {
     load_words(word_list, "src/words.txt");
     vector<string> ladder = generate_word_ladder("car", "cheat", word_list);
     if (ladder.size() == 0)
-        cout << "ladder is empty" << endl;
+        cout << "No word ladder found.\n";
 
     print_word_ladder(ladder);
 }
