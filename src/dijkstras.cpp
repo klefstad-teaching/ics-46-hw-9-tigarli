@@ -60,7 +60,7 @@ vector<int> dijkstra_shortest_path(const Graph& G, int source, vector<int>& prev
 
     vector<int> distance(n, INF);
     vector<bool> visited(n, false);
-    previous.resize(n, -1);
+    previous = vector<int>(n, -1);
 
     priority_queue<Node, vector<Node>, WeightComparator> pq;
 
